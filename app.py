@@ -1,12 +1,15 @@
 import os
+import argparse
 from pdf2image import convert_from_path
+
+# Command line argument
+parser = argparse.ArgumentParser(description='Convert PDF pages to images.')
+parser.add_argument('--only_cover', action='store_true', help='Only convert the first page (cover) of each PDF')
+args = parser.parse_args()
 
 # Folders
 pdf_folder = 'PDF_Files'
 output_folder = 'PNG_Outputs'
-
-# Option to only convert the first page (cover page) of each PDF
-only_cover = True
 
 # Create output folder if not exists
 if not os.path.exists(output_folder):
@@ -24,7 +27,7 @@ for pdf_file in pdf_files:
     images = convert_from_path(pdf_path)
 
     # If only_cover is True, only keep the first image
-    if only_cover:
+    if args.only_cover:
         images = images[:1]
 
     # Save pages as images
