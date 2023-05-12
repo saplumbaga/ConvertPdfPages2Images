@@ -6,7 +6,7 @@ This project contains a Python script that converts PDF files into PNG images. I
 
 1. Clone this repository:
 ```
-git clone https://github.com/<your_username>/ConvertPdfPages2Images.git
+git clone https://github.com/saplumbaga/ConvertPdfPages2Images.git
 ```
 2. Navigate to the project directory:
 ```
